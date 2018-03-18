@@ -32,6 +32,38 @@ function factorial(arg){
      return res;
 }
 alert(factorial(+prompt('Факториал какого числа вы хотите увидеть?')));
-/****************************************************************************/   
+/****************************************************************************/
 
-    
+/***  Задача по Find the Longest Word in a String  ***/
+
+function findLongestWord(str) {
+    var arr = str.split(' ');
+    var wordLong = 0;
+    for (i=0; i<arr.length; i++){
+        if(arr[i].length > wordLong) {
+            wordLong = arr[i].length;
+        }
+    }
+return wordLong;
+}
+findLongestWord("The quick brown fox jumped over the lazy dog");
+
+/***  Задача по Title Case a Sentence  ***/
+
+ function titleCase(str){
+
+    var words = str.split(' ');
+    var arr = [];
+    var word;
+
+   for (var i in words)
+   {
+      word = words[i].toLowerCase(); // сначал все в нижний регистр.
+      word = word[0].toUpperCase() + word.substring(1); // первый символ в Апп, со второго возвращаем подстрокой до конца.
+      arr.push(word);
+   }
+   console.log(arr.join(" "));
+}
+
+titleCase("fffm a gg little tea pot gsrfsd asafdsf ");
+/****************************************************************************/
