@@ -76,3 +76,15 @@ for(i; i<len; i+=1){
 }
 console.log(sum);
 
+/***   положительные числа. квадратный корень  ***/
+
+var arr = [1, 5, 20, 9, -25, -59, -79], arr_positive = [], i = 0, len = arr.length;
+
+for(i; i<len; i+=1){
+    if(arr[i] > 0) {
+        arr_positive.push(arr[i]);
+        console.log('Квадратный корень числа ' + arr[i] + ' равен: ' + Math.sqrt(arr_positive[i]));
+    }
+}
+console.log(arr_positive);
+/****************************************************************************/
