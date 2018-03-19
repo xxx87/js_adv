@@ -67,3 +67,12 @@ findLongestWord("The quick brown fox jumped over the lazy dog");
 
 titleCase("fffm a gg little tea pot gsrfsd asafdsf ");
 /****************************************************************************/
+
+/***  Найдите среднее арифметическое  ***/
+var arr = [12, 15, 20, 25, 59, 79], sum = 0, i = 0, len = arr.length;
+
+for(i; i<len; i+=1){
+    sum += arr[i]/len;
+}
+console.log(sum);
+
