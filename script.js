@@ -88,3 +88,36 @@ for(i; i<len; i+=1){
 }
 console.log(arr_positive);
 /****************************************************************************/
+
+/***  Return Largest Numbers in Arrays Complete  ***/
+
+// Variant 1:
+
+function largestOfFour(arr) {
+    var newArr = [], len = arr.length, i;
+        for(i=0; i<len; i+=1){
+          newArr.push(Math.max.apply(null, arr[i]));
+        }
+      //console.log(newArr);
+    return newArr;
+}
+    largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+// Variant 2:
+
+function largestOfFour(arr) {
+    var newArr = [], len = arr.length, maxNum, i, j;
+        for(i = 0; i<len; i+=1){
+            maxNum = 0;
+            for(j = 0; j<arr[i].length; j+=1){
+                if(arr[i][j] > maxNum){
+                    maxNum = arr[i][j];
+                }
+            }
+          newArr.push(maxNum);
+        }
+      //console.log(newArr);
+    return newArr;
+}
+largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
