@@ -89,6 +89,13 @@ for(i; i<len; i+=1){
 console.log(arr_positive);
 /****************************************************************************/
 
+/*
+Домашнее задание к пятнице
+1. Return Largest Numbers in Arrays (Freecodecamp)
+2. Confirm the Ending (Freecodecamp)
+3. Сделайте функцию, которая считает и выводит количество своих вызовов.
+4. Прочитать что означает числа Фибоначчи. Написать на Javascript. Использовать цикл. Промежуток выбирайте по своему усмотрению. Также установите счетчик внутри цикла, чтобы узнать количество итераций. Промежуток выбирайте по своему усмотрению. Также установите счетчик внутри цикла, чтобы узнать количество итераций. Фибоначчи вывести массивом.
+*/
 /***  Return Largest Numbers in Arrays  ***/
 
 // Variant 1:
@@ -133,5 +140,34 @@ function confirmEnding(str, target) {
     }
 }
 console.log(confirmEnding("He has to give me a new name", "e"));
+
+/***  Сделайте функцию, которая считает и выводит количество своих вызовов  ***/
+
+    var counter = 0;
+    function count() {
+        console.log(++counter);
+    }
+    count();
+    count();
+    count();
+    count();
+    count();
+
+/***  числа Фибоначчи. Написать на Javascript. Использовать цикл. Фибоначчи вывести массивом  ***/
+function fibonacchi(num) {
+
+    var sumFibonacci, numberOne, numberTwo, newArr = [], counter = 0, i;
+
+        for (i = 1; i <= num; i++) {
+            sumFibonacci = numberOne + numberTwo || 1;
+            numberOne = numberTwo;
+            numberTwo = sumFibonacci;
+            newArr.push(sumFibonacci);
+            counter++;
+        }
+    console.log(newArr);
+    console.log('Цикл сделал ' + counter + ' итераций')
+}
+fibonacchi(10);
 
 /****************************************************************************/
