@@ -89,7 +89,7 @@ for(i; i<len; i+=1){
 console.log(arr_positive);
 /****************************************************************************/
 
-/***  Return Largest Numbers in Arrays Complete  ***/
+/***  Return Largest Numbers in Arrays  ***/
 
 // Variant 1:
 
@@ -121,3 +121,17 @@ function largestOfFour(arr) {
 }
 largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
 
+/***  Confirm the Ending  ***/
+
+function confirmEnding(str, target) {
+
+    var tLen = target.length;
+    if(str.slice(-tLen) === target) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(confirmEnding("He has to give me a new name", "e"));
+
+/****************************************************************************/
