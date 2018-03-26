@@ -133,11 +133,7 @@ largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 85
 function confirmEnding(str, target) {
 
     var tLen = target.length;
-    if(str.slice(-tLen) === target) {
-        return true;
-    } else {
-        return false;
-    }
+    return str.slice(-tLen) === target;
 }
 console.log(confirmEnding("He has to give me a new name", "e"));
 
@@ -171,3 +167,58 @@ function fibonacchi(num) {
 fibonacchi(10);
 
 /****************************************************************************/
+
+/***   первая задача - Repeat a string   ***/
+    function repeatStringNumTimes(str, num) {
+        return num > 0 ? str.repeat(num) : "";
+    }
+
+    console.log(repeatStringNumTimes("abc", -3));
+
+/***   вторая Задача - Truncate a string   ***/
+    function truncateString(str, num) {
+        switch(true){
+            case num <= 3 : return str.slice(0, num) + '...'; break;
+            case str.length > num : return str.slice(0, num - 3) + '...'; break;
+            default: return str;
+        }
+    }
+    console.log(truncateString("A-tisket a-tasket A green and yellow basket", 11));
+
+/***   1. Дан массив. Создайте ul через createElement, затем вставьте каждый элемент этого массива в отдельную li внутри этой ul, затем вставьте эту ul в конец body.   ***/
+    var arr = ["qq", "ww", "ee", "rr", "tt"], ul, li, i;
+
+    function inputArrIn() {
+        ul = document.createElement('ul');
+        document.getElementsByTagName('body')[0].appendChild(ul);
+
+        for(i = 0; i < arr.length; i += 1){
+            li = document.createElement('li');
+            document.getElementsByTagName('ul')[0].appendChild(li);
+            li.innerHTML = arr[i];
+        }
+    }
+    inputArrIn();
+
+/***  Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут   ***/
+    <input id="inp" type="text">
+    <button onclick="clon()">Clone</button>
+
+    var inp, inpClone;
+
+    function clon(){
+        inp = document.getElementById('inp').value;
+        inpClone = document.createElement('input');
+        document.getElementsByTagName('body')[0].appendChild(inpClone);
+        inpClone.value = inp;
+    };
+
+/***  Дан массив с числами. Проверьте то, что в нем есть отрицательные элементы  ****/
+    function negative(){
+        var arr = [1,3,6,5,-6,3,-22,-5], i, res;
+        for(i = 0; i < arr.length; i += 1){
+           arr[i] < 0 ? res = true : res = false;
+        }
+        return res;
+    }
+console.log(negative());
