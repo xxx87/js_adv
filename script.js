@@ -260,4 +260,30 @@ console.log(slasher([1, 2, 3], 9));
 
 
 /***   Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть - выведите 'да', а если нет - выведите 'нет'   ***/
+function twoNum(arr){
+    var res, i;
+    for(i = 0; i < arr.length; i += 1){
+        if(arr[i] === arr[i+1]){
+            res = "Есть совпадение";
+            break;
+        } else {
+            res = "Нет совпадений";
+        }
+    }
+    return res;
+}
+console.log(twoNum([1,3,1,5,6,3,8,99]));
 
+
+/***  Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.   ***/
+
+    function getDigitsSum(digit) {
+        var arr = String(digit).split(''),
+            res = 0,
+            i;
+        for(i = 0; i < arr.length; i += 1){
+            res += +arr[i];
+        }
+        return res;
+    }
+    console.log(getDigitsSum(1663));
