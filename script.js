@@ -232,3 +232,28 @@ function slasher(arr, howMany) {
     return newArr;
 }
 console.log(slasher([1, 2, 3], 9));
+
+
+
+/*** Дан ul, в нем несколько li. Под ul сделайте кнопку, по нажатию на которую в конец ul будет добавляться новый li с текстом 'пункт'. Сделайте так, чтобы при клике на каждый li, ему в конец добавлялся '!'. Это должно работать и для вновь добавленных li. Задачу решите с помощью делегирования (то есть событие должно быть навешано на ul)  ***/
+
+/*html*/
+<ul id="list"></ul>
+<button onclick="addLi()">Add item</button>
+
+<script>
+
+    function addLi() {
+        var ul = document.getElementById('list'),
+            li = document.createElement('li');
+        li.innerText = 'Пункт';
+        ul.appendChild(li);
+    }
+
+    function List(elem){
+        elem.onclick = function(e){
+            var target = event.target;
+            target.innerText += '!'
+        }
+    };
+    List(list);
