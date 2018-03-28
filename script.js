@@ -207,3 +207,28 @@ fibonacchi(10);
         });
     };
 console.log(negative());
+
+
+/*** Chunky Monkey Complete  ***/
+function chunkArrayInGroups(arr, size) {
+    var start = 0,
+        s = size,
+        i,
+        newArr = [];
+
+    for(i = 0; i < arr.length/size; i+=1) {
+        newArr[i] = arr.slice(start, s);
+        start = s;
+        s += size;
+    }
+    return newArr;
+}
+console.log(chunkArrayInGroups(["a", "b", "c", "d", "e", "f", "g"], 3));
+
+
+/***   Slasher Flick   ***/
+function slasher(arr, howMany) {
+    var newArr = arr.slice(howMany);
+    return newArr;
+}
+console.log(slasher([1, 2, 3], 9));
