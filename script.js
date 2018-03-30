@@ -228,8 +228,7 @@ console.log(chunkArrayInGroups(["a", "b", "c", "d", "e", "f", "g"], 3));
 
 /***   Slasher Flick   ***/
 function slasher(arr, howMany) {
-    var newArr = arr.slice(howMany);
-    return newArr;
+    return arr.slice(howMany);
 }
 console.log(slasher([1, 2, 3], 9));
 
@@ -239,24 +238,27 @@ console.log(slasher([1, 2, 3], 9));
 
 /*html*/
 <ul id="list"></ul>
-<button onclick="addLi()">Add item</button>
+<button id="addButton">Add item</button>
 
 <script>
+    var ul = document.getElementById('list');
+    var button = document.getElementById('addButton');
+
+    button.addEventListener('click', addLi);
+
+    ul.addEventListener('click', addItem);
 
     function addLi() {
-        var ul = document.getElementById('list'),
-            li = document.createElement('li');
+        var li = document.createElement('li');
         li.innerText = 'Пункт';
         ul.appendChild(li);
     }
 
-    function List(elem){
-        elem.onclick = function(e){
-            var target = event.target;
-            target.innerText += '!'
-        }
+    function addItem(elem){
+
+           event.target.innerHTML += '!';
     };
-    List(list);
+//    List(list);
 
 
 /***   Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть - выведите 'да', а если нет - выведите 'нет'   ***/
