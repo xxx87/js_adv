@@ -289,3 +289,40 @@ console.log(twoNum([1,3,1,5,6,3,8,99]));
         return res;
     }
     console.log(getDigitsSum(1663));
+
+
+/***   1. Mutations   ***/
+    function mutation(arr) {
+        var i;
+        for(i = 0; i < arr[1].length; i += 1){
+            if(arr[0].toLowerCase().indexOf(arr[1][i].toLowerCase()) === -1){
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(mutation(["voodoo", "vd"]));
+
+
+/***   2. Falsy Bouncer   ***/
+    function bouncer(arr) {
+      var newArr = arr.filter(myFilter);
+      return newArr;
+    }
+    function myFilter(n) {
+        return !!n === true;
+    }
+    console.log(bouncer(["a", "b", 9, 0, false]));
+
+
+/***  3. Everything be true ( Intermediate Algorithm Scripting)  ***/
+    function truthCheck(collection, pre) {
+        var i = 0, size = collection.length;
+        for(; i < size; i += 1){
+            if(!collection[i][pre]){
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(truthCheck([{"user": "Tinky-Winky"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
