@@ -313,7 +313,11 @@ console.log(twoNum([1,3,1,5,6,3,8,99]));
         return !!n === true;
     }
     console.log(bouncer(["a", "b", 9, 0, false]));
-
+/*  v2  */
+    function bouncer(arr) {
+      return arr.filter(Boolean);
+    }
+    console.log(bouncer(["a", "b", 9, 0, false, NaN, "", 0, undefined]));
 
 /***  3. Everything be true ( Intermediate Algorithm Scripting)  ***/
     function truthCheck(collection, pre) {
