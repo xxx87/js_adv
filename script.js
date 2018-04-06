@@ -330,3 +330,28 @@ console.log(twoNum([1,3,1,5,6,3,8,99]));
         return true;
     }
     console.log(truthCheck([{"user": "Tinky-Winky"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
+
+
+
+
+/***  1. Seek and Destroy (FCC)  ***/
+    function destroyer(arr) {
+        var arg = Array.prototype.slice.call(arguments, 1), i, j;
+        for(i = 0; i < arg.length; i += 1){
+            for(j = 0; j < arr.length; j += 1){
+                if(arr[j] === arg[i]){
+                    arr.splice( j, 1 );
+                    j--;
+                }
+            }
+        }
+        return arr;
+    }
+    console.log(destroyer([3, 5, 1, 2, 2], 2, 3, 5));
+
+
+/***   2. Where do I belong Complete (FCC)   ***/
+
+
+
+/***   3. Sum All Numbers in a Range Complete (FCC Intermediate)   ***/
